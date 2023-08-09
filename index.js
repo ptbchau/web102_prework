@@ -86,7 +86,8 @@ raisedCard.innerHTML = `${totalPledged.toLocaleString('en-US')}`;
 
 // grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
-gamesCard.innerHTML = `${GAMES_JSON.length.toLocaleString('en-US')}`;
+const totalGames = GAMES_JSON.length;
+gamesCard.innerHTML = `${totalGames.toLocaleString('en-US')}`;
 
 /*************************************************************************************
  * Challenge 5: Add functions to filter the funded and unfunded games
@@ -150,12 +151,20 @@ allBtn.addEventListener("click", showAllGames);
 const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
-
+const unfundedGames = GAMES_JSON.filter((game) => {
+    return game.pledged < game.goal;
+});
+const numUnfundedGames = unfundedGames.length;
 
 // create a string that explains the number of unfunded games using the ternary operator
-
+const displayStr = `
+A total of $${totalPledged.toLocaleString('en-US')} has been raised for ${totalGames} game${totalGames > 1 ? "s" : ""}.
+Currently, ${numUnfundedGames} game${numUnfundedGames > 1 ? "s" : ""} remains unfunded. We need your help to fund these amazing games!`;
 
 // create a new DOM element containing the template string and append it to the description container
+const descriptionParagraph = document.createElement("p");
+descriptionParagraph.innerHTML = displayStr;
+descriptionContainer.appendChild(descriptionParagraph);
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
