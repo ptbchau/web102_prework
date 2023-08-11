@@ -4,7 +4,7 @@ Submitted by: Chau Phan
 
 Sea Monster Crowfunding is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
 
-Time spent: 8 hours spent in total
+Time spent: 12 hours spent in total
 
 ## Required Features
 
@@ -36,8 +36,8 @@ GIF created with [peek](https://github.com/phw/peek) for Linux.
 ## Notes
 
 I encountered several challenges when implementing the search add-on feature:
-- Handling edge cases where search input in quotation marks vs. multiple keywords
-- Handling edge cases where multiple keywords appear in one game
+- Handling edge cases where search input in quotation marks vs. multiple keywords.
+- Handling edge cases where multiple keywords appear in one game.
 - Handling uppercase and lowercase when highlighting the keywords in the results.
 - Fix bugs when original GAMES_JSON was modified after highlighting the keywords in the results. Solution: using deep copy.
 
