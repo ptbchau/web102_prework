@@ -80,3 +80,18 @@ button {
     margin: 1%;
     border-radius: 7px;
 }
+
+#search-container {
+    text-align: center;
+}
+
+input {
+    border: none;
+    padding: 1%;
+    margin-right: 0%;
+    border-radius: 7px;
+}
+
+#search-container > button {
+    margin-left: 0%;
+}

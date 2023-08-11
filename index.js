@@ -182,11 +182,84 @@ const sortedGames = GAMES_JSON.sort((item1, item2) => {
 const [firstGame, secondGame, ...rest] = sortedGames;
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
-const firstGameEle = document.createElement('p');
+const firstGameEle = document.createElement("p");
 firstGameEle.innerHTML = firstGame.name;
 firstGameContainer.append(firstGameEle);
 
 // do the same for the runner up item
-const secondGameEle = document.createElement('p');
+const secondGameEle = document.createElement("p");
 secondGameEle.innerHTML = secondGame.name;
 secondGameContainer.append(secondGameEle);
+
+/************************************************************************************
+ * Customizations: Search feature
+ * Users can search for a specific game using a search bar.
+ */
+
+// get user input
+function getUserInput(inputEleId) {
+  const inputEle = document.getElementById(inputEleId);
+  let inputVal = inputEle.value.toLowerCase();
+  return inputVal;
+}
+
+// get search results
+// use rest parameters so that the search categories can be modified in case having new features for search.
+function getSearchResults(input, ...searchCats) {
+  // if users put their input phrase between quotation marks, search the phrase exactly as it appears in the search categories.
+  // if users don't use quotation marks, break down the phrase into multiple words and find each word in the search categories.
+  const inputComponents =
+    input[0] == '"' && input[input.length - 1] == '"'
+      ? [input.slice(1, -1)]
+      : input.split(" ");
+
+  // make a deep copy to avoid modifying original GAMES_JASON
+  let games_json_copy = JSON.parse(JSON.stringify(GAMES_JSON));
+
+  // get a list of games having its search categories matches the input.
+  // use Set for the list game results to avoid duplicate.
+  let results = new Set();
+  for (const category of searchCats) {
+    for (const key of inputComponents) {
+      let addedGames = games_json_copy.filter(
+        (game) => game[category].toLowerCase().indexOf(key) != -1
+      );
+
+      // hightlight keyword
+      addedGames.forEach((game) => {
+        // the following doesn't work as expected because uppercase case.
+        // game[category] = game[category].replace(key, `<mark>${key}</mark>`)
+        let originalTextIndex = game[category].toLowerCase().indexOf(key);
+        let originalText = game[category].slice(
+          originalTextIndex,
+          originalTextIndex + key.length
+        );
+        game[category] = game[category].replace(
+          originalText,
+          `<mark>${originalText}</mark>`
+        );
+      });
+
+      for (const game of addedGames) {
+        results = results.add(game);
+      }
+    }
+  }
+
+  return results;
+}
+
+// show search result games
+function showSearchGames() {
+  deleteChildElements(gamesContainer);
+  let input = getUserInput("game-search");
+  // At this time, search categories are name and description as default.
+  // This could be modified in the future using search options.
+  let searchCategories = ["name", "description"];
+  let results = getSearchResults(input, ...searchCategories);
+  addGamesToPage(results);
+}
+
+// display the search results
+const searchBtn = document.getElementById("search-btn");
+searchBtn.addEventListener("click", showSearchGames);
