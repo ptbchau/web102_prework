@@ -24,9 +24,11 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='https://imgur.com/a/9uhueRF' title='Video Walkthrough' width='40' alt='Video Walkthrough' />
+<img src='https://github.com/ptbchau/web102_prework/blob/main/Prework_web102_walkthrough.gif' title='Video Walkthrough' width='40' alt='Walkthrough link from Github' />
 
 [Imgur link](https://imgur.com/XRIkQBl)
+
+[Imgur another link](https://imgur.com/a/9uhueRF)
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with [peek](https://github.com/phw/peek) for Linux.
@@ -38,6 +40,8 @@ I encountered several challenges when implementing the search add-on feature:
 - Handling edge cases where multiple keywords appear in one game
 - Handling uppercase and lowercase when highlighting the keywords in the results.
 - Fix bugs when original GAMES_JSON was modified after highlighting the keywords in the results. Solution: using deep copy.
+
+I also had several issues with embedding large gif file to markdown, troubleshooting issues live server extension on VSCode.
 
 ## License
 
