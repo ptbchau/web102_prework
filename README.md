@@ -24,9 +24,9 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='https://imgur.com/O6YII3m' title='Video Walkthrough' width='40' alt='Video Walkthrough' />
+<img src='https://imgur.com/a/9uhueRF' title='Video Walkthrough' width='40' alt='Video Walkthrough' />
 
-[Imgur gif](https://github.com/ptbchau/web102_prework/blob/main/Prework_web102_walkthrough.gif | width: '40')
+[Imgur link](https://imgur.com/XRIkQBl)
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with [peek](https://github.com/phw/peek) for Linux.
