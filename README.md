@@ -24,7 +24,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='https://github.com/ptbchau/web102_prework/blob/main/Prework_web102_walkthrough.gif' title='Video Walkthrough' width='40' alt='Walkthrough link from Github' />
+<img src='https://github.com/ptbchau/web102_prework/blob/main/Prework_web102_walkthrough.gif' title='Video Walkthrough' width='800' alt='Walkthrough link from Github' />
 
 [Imgur link](https://imgur.com/XRIkQBl)
 
