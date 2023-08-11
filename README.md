@@ -26,7 +26,7 @@ Here's a walkthrough of implemented features:
 
 <img src='https://imgur.com/O6YII3m' title='Video Walkthrough' width='40' alt='Video Walkthrough' />
 
-[Imgur gif](https://github.com/ptbchau/web102_prework/blob/main/Prework_web102_walkthrough.gif)
+[Imgur gif](https://github.com/ptbchau/web102_prework/blob/main/Prework_web102_walkthrough.gif | width: '40')
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with [peek](https://github.com/phw/peek) for Linux.
